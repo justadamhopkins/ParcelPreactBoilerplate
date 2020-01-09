@@ -1,0 +1,26 @@
+{
+  "name": "parcelpreactboilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for cool web apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "preact": "^10.2.1",
+    "preact-dom": "^1.0.1"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  }
+}
