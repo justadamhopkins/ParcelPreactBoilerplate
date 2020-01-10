@@ -1,4 +1,16 @@
 import { h, render } from 'preact';
+import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client';
 import App from './App'
 
-render(<App />, document.getElementById('root'));
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({
+    uri: 'http://localhost:4000/',
+  })
+});
+
+render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+, document.getElementById('root'));
