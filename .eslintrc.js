@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ["plugin:react/recommended", "airbnb"],
+  extends: ["standard-preact", "airbnb"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
@@ -16,6 +16,20 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
+  settings: {
+    react: {
+      pragma: "h"
+    }
+  },
   plugins: ["react"],
-  rules: {}
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        extensions: [".js", ".jsx"]
+      }
+    ]
+  }
 };

@@ -1,13 +1,13 @@
 import { h } from 'preact';
-import { useQuery, useMutation, gql } from '@apollo/client'
+import { useQuery, useMutation, gql } from '@apollo/client';
 
 const query = gql`
-query {
-  books {
-    id
-    title
+  query {
+    books {
+      id
+      title
+    }
   }
-}
 `;
 
 const mutation = gql`
@@ -19,10 +19,9 @@ const mutation = gql`
   }
 `;
 
-
 const App = () => {
-  const { error, loading, data } = useQuery(query)
-  const [update] = useMutation(mutation)
+  const { error, loading, data } = useQuery(query);
+  const [update] = useMutation(mutation);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -30,11 +29,16 @@ const App = () => {
     <div>
       <h1>Hello from Preact</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
-      <button onClick={() => {
-        update()
-      }}>Update</button>
+      <button
+        type="button"
+        onClick={() => {
+          update();
+        }}
+      >
+        Update
+      </button>
     </div>
-    )
-  }
+  );
+};
 
-export default App
+export default App;
