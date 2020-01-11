@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "dev": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
@@ -64,7 +64,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
+    "*.{js,jsx}": [
       "prettier --write",
       "eslint --fix",
       "git add"
