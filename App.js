@@ -27,7 +27,7 @@ const App = () => {
   if (error) return <p>Error :(</p>;
   return (
     <div>
-      <h1>Hello from Preact</h1>
+      <h1>{`Hello from Preact and the environment is ${process.env.ENVIRONMENT}`}</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
       <button
         type="button"
