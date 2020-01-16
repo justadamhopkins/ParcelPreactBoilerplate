@@ -7,7 +7,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "server": "nodemon server/index.js",
+    "start": "concurrently \"npm:server\" \"npm:dev\""
   },
   "author": "",
   "license": "ISC",
