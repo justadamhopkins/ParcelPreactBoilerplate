@@ -7,8 +7,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "dev": "parcel index.html",
-    "build": "parcel build index.html",
+    "build:client": "parcel build index.html",
+    "build:server": "babel -d ./dist ./server -s",
     "server": "babel-watch server/index.js",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run build:client && npm run build:server",
     "start": "concurrently \"npm:server\" \"npm:dev\""
   },
   "author": "",
