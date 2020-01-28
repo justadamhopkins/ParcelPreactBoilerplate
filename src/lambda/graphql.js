@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server-lambda");
+const { ApolloServer, gql } = require('apollo-server-lambda');
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
@@ -28,27 +28,27 @@ const typeDefs = gql`
 const books = [
   {
     id: 1,
-    title: "Harry Potter and the Chamber of Secrets",
-    author: "J.K. Rowling"
+    title: 'Harry Potter and the Chamber of Secrets',
+    author: 'J.K. Rowling',
   },
   {
     id: 2,
-    title: "Jurassic Paaaaaaaaaaaark",
-    author: "Michael Crichton"
-  }
+    title: 'Jurassic Paaaaaaaaaaaark',
+    author: 'Michael Crichton',
+  },
 ];
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
-    books: () => books
+    books: () => books,
   },
   Mutation: {
     updateBookTitle(_, params) {
       return params;
-    }
-  }
+    },
+  },
 };
 
 // The ApolloServer constructor requires two parameters: your schema
@@ -59,7 +59,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 exports.handler = server.createHandler({
   cors: {
-    origin: "*",
-    credentials: true
-  }
+    origin: '*',
+    credentials: true,
+  },
 });
