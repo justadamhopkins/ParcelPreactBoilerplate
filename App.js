@@ -25,6 +25,7 @@ const App = () => {
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error :(</p>;
+
 	return (
 		<div>
 			<h1>{`Hello from Preact and the environment is ${process.env.ENVIRONMENT}`}</h1>
