@@ -7,7 +7,7 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"start:client": "parcel index.html",
-		"start:lambda": "netlify-lambda serve src/lambda",
+		"start:lambda": "netlify-lambda serve --config ./config/webpack.functions.js src/lambda",
 		"build:client": "parcel build index.html --public-url ./",
 		"build:lambda": "netlify-lambda build src/lambda",
 		"start": "run-p start:**",
@@ -58,7 +58,8 @@
 		"netlify-lambda": "^1.6.3",
 		"preact": "^10.2.1",
 		"preact-dom": "^1.0.1",
-		"styled-components": "^4.4.1"
+		"styled-components": "^4.4.1",
+		"webpack-node-externals": "^1.7.2"
 	},
 	"alias": {
 		"react": "preact/compat",
