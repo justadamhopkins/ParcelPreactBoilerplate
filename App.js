@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useQuery, useMutation, gql } from '@apollo/client';
 
-const query = gql`
+export const bookQuery = gql`
 	query {
 		books {
 			id
@@ -20,12 +20,11 @@ const mutation = gql`
 `;
 
 const App = () => {
-	const { error, loading, data } = useQuery(query);
+	const { error, loading, data } = useQuery(bookQuery);
 	const [update] = useMutation(mutation);
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error :(</p>;
-
 	return (
 		<div>
 			<h1>{`Hello from Preact and the environment is ${process.env.ENVIRONMENT}`}</h1>
