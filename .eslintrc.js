@@ -23,7 +23,15 @@ module.exports = {
 	},
 	plugins: ['react'],
 	rules: {
-		'indent': [2, 'tab'],
 		'no-tabs': 0,
+		'indent': ['error', 'tab'],
+		'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+		'react/jsx-indent': [
+			2,
+			'tab',
+			{ checkAttributes: false, indentLogicalExpressions: true },
+		],
+		'react/jsx-indent-props': [2, 'tab'],
+		'jsx-quotes': ['error', 'prefer-single'],
 	},
 };
