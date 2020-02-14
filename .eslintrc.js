@@ -5,7 +5,7 @@ module.exports = {
 		node: true,
 		jest: true,
 	},
-	extends: ['standard-preact', 'airbnb'],
+	extends: ['airbnb'],
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly',
@@ -18,9 +18,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	settings: {
-		react: {
-			pragma: 'h',
-		},
+		react: {},
 	},
 	plugins: ['react'],
 	rules: {
