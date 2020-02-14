@@ -1,6 +1,5 @@
 import { h } from 'preact';
 import { render, cleanup } from '@testing-library/preact';
-import '@testing-library/jest-dom';
 import { MockedProvider } from '@apollo/client';
 import App, { bookQuery } from './App';
 
@@ -17,7 +16,9 @@ describe('@App', () => {
 			},
 		},
 	];
+
 	afterEach(cleanup);
+
 	it('renders the app', () => {
 		const { asFragment } = render(
 			<MockedProvider mocks={mocks} addTypename={false}>
