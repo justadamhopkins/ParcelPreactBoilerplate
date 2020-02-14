@@ -50,14 +50,14 @@ describe('@App', () => {
 			},
 		];
 
-		const { getByText, debug } = render(
+		const { getByText } = render(
 			<MockedProvider mocks={errorMock} addTypename={false}>
 				<App />
 			</MockedProvider>,
 		);
 
 		await wait();
-		debug();
+
 		const ele = getByText(/Error/i);
 
 		expect(ele).toBeTruthy();
