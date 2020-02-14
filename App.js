@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
 
 export const bookQuery = gql`
@@ -25,9 +25,10 @@ const App = () => {
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error :(</p>;
+
 	return (
 		<div>
-			<h1>{`Hello from Preact and the environment is ${process.env.ENVIRONMENT}`}</h1>
+			<h1>{`Hello from React and the environment is ${process.env.ENVIRONMENT}`}</h1>
 			<pre>{JSON.stringify(data, null, 2)}</pre>
 			<button
 				type='button'

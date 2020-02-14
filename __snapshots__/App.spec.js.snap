@@ -4,11 +4,23 @@ exports[`@App renders the app 1`] = `
 <DocumentFragment>
   <div>
     <h1>
-      Hello from Preact
+      Hello from React and the environment is undefined
     </h1>
-    <h1>
-      Hello from Preactv2
-    </h1>
+    <pre>
+      {
+  "books": [
+    {
+      "id": "1",
+      "title": "HarryPotter"
+    }
+  ]
+}
+    </pre>
+    <button
+      type="button"
+    >
+      Update
+    </button>
   </div>
 </DocumentFragment>
 `;

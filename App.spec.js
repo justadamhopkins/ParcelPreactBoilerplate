@@ -1,6 +1,6 @@
-import { h } from 'preact';
-import { render, cleanup } from '@testing-library/preact';
-import { MockedProvider } from '@apollo/client';
+import React from 'react';
+import { MockedProvider } from '@apollo/client/testing';
+import { render, cleanup, wait } from '@testing-library/react';
 import App, { bookQuery } from './App';
 
 describe('@App', () => {
@@ -19,12 +19,15 @@ describe('@App', () => {
 
 	afterEach(cleanup);
 
-	it('renders the app', () => {
+	it('renders the app', async () => {
 		const { asFragment } = render(
 			<MockedProvider mocks={mocks} addTypename={false}>
 				<App />
 			</MockedProvider>,
 		);
+
+		await wait();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
