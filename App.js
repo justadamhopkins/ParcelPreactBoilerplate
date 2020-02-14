@@ -10,7 +10,7 @@ export const bookQuery = gql`
 	}
 `;
 
-const mutation = gql`
+export const bookMutation = gql`
 	mutation {
 		updateBookTitle(id: 1, title: "New title") {
 			id
@@ -21,7 +21,7 @@ const mutation = gql`
 
 const App = () => {
 	const { error, loading, data } = useQuery(bookQuery);
-	const [update] = useMutation(mutation);
+	const [update] = useMutation(bookMutation);
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error :(</p>;
