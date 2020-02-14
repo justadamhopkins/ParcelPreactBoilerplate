@@ -67,6 +67,9 @@
 		"react-dom": "preact/compat"
 	},
 	"jest": {
+		"setupFilesAfterEnv": [
+			"./test/setup.js"
+		],
 		"testPathIgnorePatterns": [
 			"<rootDir>/node_modules/"
 		],
