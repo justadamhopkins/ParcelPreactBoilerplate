@@ -12,7 +12,8 @@
 		"build:lambda": "netlify-lambda build src/lambda",
 		"start": "run-p start:**",
 		"build": "run-p build:**",
-		"clean": "rm -rf dist && mkdir dist"
+		"clean": "rm -rf dist && mkdir dist",
+		"lint:css": "stylelint './src/**/*.js'"
 	},
 	"author": "",
 	"license": "ISC",
@@ -42,11 +43,16 @@
 		"husky": "^4.0.6",
 		"jest": "^25.1.0",
 		"jest-dom": "^4.0.0",
+		"jest-styled-components": "^7.0.0",
 		"lint-staged": "^9.5.0",
 		"npm-run-all": "^4.1.5",
 		"parcel-bundler": "^1.12.4",
 		"prettier": "1.19.1",
-		"react-test-renderer": "^16.12.0"
+		"react-test-renderer": "^16.12.0",
+		"stylelint": "^13.2.0",
+		"stylelint-config-recommended": "^3.0.0",
+		"stylelint-config-styled-components": "^0.1.1",
+		"stylelint-processor-styled-components": "^1.10.0"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.0.0-beta.20",
@@ -58,6 +64,7 @@
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",
 		"styled-components": "^4.4.1",
+		"styled-reset": "^4.1.0",
 		"webpack-node-externals": "^1.7.2"
 	},
 	"jest": {
