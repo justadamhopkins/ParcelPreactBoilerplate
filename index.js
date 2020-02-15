@@ -6,7 +6,13 @@ import {
 	InMemoryCache,
 	ApolloProvider,
 } from '@apollo/client';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 import App from './App';
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+`;
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
@@ -17,6 +23,7 @@ const client = new ApolloClient({
 
 render(
 	<ApolloProvider client={client}>
+		<GlobalStyle />
 		<App />
 	</ApolloProvider>,
 	document.getElementById('root'),
