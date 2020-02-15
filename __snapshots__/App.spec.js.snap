@@ -2,8 +2,12 @@
 
 exports[`@App renders the app 1`] = `
 <DocumentFragment>
-  <div>
-    <h1>
+  <section
+    class="App__Wrapper-ilpe0d-0 cldPfB"
+  >
+    <h1
+      class="App__Title-ilpe0d-1 cNfSRS"
+    >
       Hello from React and the environment is undefined
     </h1>
     <pre>
@@ -17,10 +21,11 @@ exports[`@App renders the app 1`] = `
 }
     </pre>
     <button
+      class="App__Button-ilpe0d-2 fMSavx"
       type="button"
     >
       Update
     </button>
-  </div>
+  </section>
 </DocumentFragment>
 `;
