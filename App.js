@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation, gql } from '@apollo/client';
+import styled from 'styled-components';
 
 export const bookQuery = gql`
 	query {
@@ -19,6 +20,22 @@ export const bookMutation = gql`
 	}
 `;
 
+const Wrapper = styled.section`
+	background: #5f94e8;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 100%;
+	padding: 20px;
+`;
+
+const Title = styled.h1`
+	font-size: 25px;
+	text-align: center;
+	text-decoration: underline;
+`;
+const Button = styled.button``;
+
 const App = () => {
 	const { error, loading, data } = useQuery(bookQuery);
 	const [update] = useMutation(bookMutation);
@@ -27,18 +44,18 @@ const App = () => {
 	if (error) return <p>Error :(</p>;
 
 	return (
-		<div>
-			<h1>{`Hello from React and the environment is ${process.env.ENVIRONMENT}`}</h1>
+		<Wrapper>
+			<Title>{`Hello from React and the environment is ${process.env.ENVIRONMENT}`}</Title>
 			<pre>{JSON.stringify(data, null, 2)}</pre>
-			<button
+			<Button
 				type='button'
 				onClick={() => {
 					update();
 				}}
 			>
 				Update
-			</button>
-		</div>
+			</Button>
+		</Wrapper>
 	);
 };
 
