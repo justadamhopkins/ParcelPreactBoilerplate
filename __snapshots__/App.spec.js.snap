@@ -3,25 +3,24 @@
 exports[`@App renders the app 1`] = `
 <DocumentFragment>
   <section
-    class="App__Wrapper-ilpe0d-0 cldPfB"
+    class="App__Wrapper-ilpe0d-0 jNfmdG"
   >
     <h1
-      class="App__Title-ilpe0d-1 cNfSRS"
+      class="App__Title-ilpe0d-1 cgjlNX"
     >
-      Hello from React and the environment is undefined
+      Welcome to the Parcel js, Apollo and GraphQL boilerplate. The env is undefined.
     </h1>
-    <pre>
-      {
-  "books": [
-    {
-      "id": 1,
-      "title": "HarryPotter"
-    }
-  ]
-}
-    </pre>
+    <div>
+      <div
+        class="App__BookSections-ilpe0d-2 doTNfh"
+      >
+        <p>
+          HarryPotter
+        </p>
+      </div>
+    </div>
     <button
-      class="App__Button-ilpe0d-2 fMSavx"
+      class="App__Button-ilpe0d-3 czpDLN"
       type="button"
     >
       Update
