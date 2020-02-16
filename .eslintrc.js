@@ -32,5 +32,11 @@ module.exports = {
 		],
 		'react/jsx-indent-props': [2, 'tab'],
 		'jsx-quotes': ['error', 'prefer-single'],
+		'object-curly-newline': [
+			'error',
+			{
+				ExportDeclaration: 'never',
+			},
+		],
 	},
 };
