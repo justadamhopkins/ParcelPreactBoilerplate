@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f587b7de-57fb-440f-b1af-47851c6afd8a/deploy-status)](https://app.netlify.com/sites/quizzical-joliot-836d1e/deploys)
 A boilerplate built in the following technologies:
 
 1.React a lightweight alternative to React for the front end.
