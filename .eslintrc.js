@@ -23,13 +23,13 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'react/jsx-indent-props': [2, 'tab'],
-    'jsx-quotes': ['error', 'prefer-single'],
     'object-curly-newline': [
       'error',
       {
         ExportDeclaration: 'never'
       }
-    ]
+    ],
+    'import/prefer-default-export': 0,
+    'import/no-unresolved': [2, { caseSensitive: false }]
   }
 }
