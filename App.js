@@ -78,8 +78,8 @@ const App = () => {
         ))}
       </div>
       <Button
-	type='button'
-	onClick={() => {
+        type="button"
+        onClick={() => {
           update()
         }}
       >
