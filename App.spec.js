@@ -1,105 +1,105 @@
-import React from 'react';
-import { MockedProvider } from '@apollo/client/testing';
-import { render, cleanup, wait } from '@testing-library/react';
-import App, { bookQuery } from './App';
+import React from "react"
+import { MockedProvider } from "@apollo/react-testing"
+import { render, cleanup, wait } from "@testing-library/react"
+import App, { bookQuery } from "./App"
 
-describe('@App', () => {
-	const mocks = [
-		{
-			request: {
-				query: bookQuery,
-			},
-			result: {
-				data: {
-					books: [{ id: 1, title: 'HarryPotter' }],
-				},
-			},
-		},
-	];
+describe("@App", () => {
+  const mocks = [
+    {
+      request: {
+        query: bookQuery
+      },
+      result: {
+        data: {
+          books: [{ id: 1, title: "HarryPotter" }]
+        }
+      }
+    }
+  ]
 
-	afterEach(cleanup);
+  afterEach(cleanup)
 
-	it('renders the app', async () => {
-		const { asFragment } = render(
-			<MockedProvider mocks={mocks} addTypename={false}>
-				<App />
-			</MockedProvider>,
-		);
+  it("renders the app", async () => {
+    const { asFragment } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <App />
+      </MockedProvider>
+    )
 
-		await wait();
+    await wait()
 
-		expect(asFragment()).toMatchSnapshot();
-	});
-	it('renders the loading state', async () => {
-		const { getByText } = render(
-			<MockedProvider mocks={mocks} addTypename={false}>
-				<App />
-			</MockedProvider>,
-		);
+    expect(asFragment()).toMatchSnapshot()
+  })
+  it("renders the loading state", async () => {
+    const { getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <App />
+      </MockedProvider>
+    )
 
-		const ele = getByText(/Loading.../i);
+    const ele = getByText(/Loading.../i)
 
-		expect(ele).toBeTruthy();
-	});
-	it('renders the error state', async () => {
-		const errorMock = [
-			{
-				request: {
-					query: bookQuery,
-				},
-			},
-		];
+    expect(ele).toBeTruthy()
+  })
+  it("renders the error state", async () => {
+    const errorMock = [
+      {
+        request: {
+          query: bookQuery
+        }
+      }
+    ]
 
-		const { getByText } = render(
-			<MockedProvider mocks={errorMock} addTypename={false}>
-				<App />
-			</MockedProvider>,
-		);
+    const { getByText } = render(
+      <MockedProvider mocks={errorMock} addTypename={false}>
+        <App />
+      </MockedProvider>
+    )
 
-		await wait();
+    await wait()
 
-		const ele = getByText(/Error/i);
+    const ele = getByText(/Error/i)
 
-		expect(ele).toBeTruthy();
-	});
-	// xit('fires mutation', async () => {
-	// 	const mutationMock = [
-	// 		{
-	// 			request: {
-	// 				query: bookQuery,
-	// 			},
-	// 			result: {
-	// 				data: {
-	// 					books: [{ id: 1, title: 'HarryPotter' }],
-	// 				},
-	// 			},
-	// 		},
-	// 		{
-	// 			request: {
-	// 				query: bookMutation,
-	// 			},
-	// 			result: {
-	// 				data: {
-	// 					updateBookTitle: {
-	// 						id: 1,
-	// 						title: 'New title',
-	// 					},
-	// 				},
-	// 			},
-	// 		},
-	// 	];
+    expect(ele).toBeTruthy()
+  })
+  // xit('fires mutation', async () => {
+  // 	const mutationMock = [
+  // 		{
+  // 			request: {
+  // 				query: bookQuery,
+  // 			},
+  // 			result: {
+  // 				data: {
+  // 					books: [{ id: 1, title: 'HarryPotter' }],
+  // 				},
+  // 			},
+  // 		},
+  // 		{
+  // 			request: {
+  // 				query: bookMutation,
+  // 			},
+  // 			result: {
+  // 				data: {
+  // 					updateBookTitle: {
+  // 						id: 1,
+  // 						title: 'New title',
+  // 					},
+  // 				},
+  // 			},
+  // 		},
+  // 	];
 
-	// 	const { getByText, debug } = render(
-	// 		<MockedProvider mocks={mutationMock} addTypename={false}>
-	// 			<App />
-	// 		</MockedProvider>,
-	// 	);
+  // 	const { getByText, debug } = render(
+  // 		<MockedProvider mocks={mutationMock} addTypename={false}>
+  // 			<App />
+  // 		</MockedProvider>,
+  // 	);
 
-	// 	await wait();
-	// 	fireEvent.click(getByText('Update'));
-	// 	await wait();
+  // 	await wait();
+  // 	fireEvent.click(getByText('Update'));
+  // 	await wait();
 
-	// 	debug();
-	// 	// expect(getByText('New title')).toBeTruthy();
-	// });
-});
+  // 	debug();
+  // 	// expect(getByText('New title')).toBeTruthy();
+  // });
+})
