@@ -1,6 +1,7 @@
-import React from 'react'
-import { useQuery, useMutation, gql } from '@apollo/client'
-import styled from 'styled-components'
+import React from "react"
+import { useQuery, useMutation } from "@apollo/react-hooks"
+import { gql } from "apollo-boost"
+import styled from "styled-components"
 
 export const bookQuery = gql`
   query {
