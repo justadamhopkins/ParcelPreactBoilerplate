@@ -1,14 +1,10 @@
-import React from 'react'
-import { render } from 'react-dom'
-import {
-  ApolloClient,
-  HttpLink,
-  InMemoryCache,
-  ApolloProvider
-} from '@apollo/client'
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
-import App from './App'
+import React from "react"
+import { render } from "react-dom"
+import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost"
+import { ApolloProvider } from "@apollo/react-hooks"
+import { createGlobalStyle } from "styled-components"
+import reset from "styled-reset"
+import App from "./App"
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -29,7 +25,7 @@ render(
     <GlobalStyle />
     <App />
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 )
 
 if (module.hot) {
